@@ -1,5 +1,4 @@
 import re
-import ipdb
 import requests
 import StringIO
 from PIL import Image

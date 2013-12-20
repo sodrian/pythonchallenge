@@ -1,3 +1,8 @@
+import re
+import requests
+input_text_pattern = re.compile(r'''<font color="#f000f0">(.*)</tr></td>''', re.DOTALL)
+
+
 def shift_the_string(s):
     ret = ''
     for letter in s:
@@ -7,8 +12,9 @@ def shift_the_string(s):
         ret += letter
     return ret
 
-print(shift_the_string(
-    '''g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp.
-    bmgle gr gl zw fylb gq glcddgagclr ylb rfyr'q ufw rfgq rcvr gq qm jmle.
-    sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj.'''))
+url = 'http://www.pythonchallenge.com/pc/def/map.html'
+content = requests.get(url).content
+input = input_text_pattern.findall(content)[0]
+print(input)
+print(shift_the_string(input))
 print(shift_the_string('map'))
