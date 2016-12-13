@@ -1,6 +1,8 @@
+#!/usr/bin/env python
 import re
 import requests
-input_text_pattern = re.compile(r'''<font color="#f000f0">(.*)</tr></td>''', re.DOTALL)
+
+INPUT_TEXT_PATTERN = re.compile(r'''<font color="#f000f0">(.*)</tr></td>''', re.DOTALL)
 
 
 def shift_the_string(s):
@@ -12,9 +14,11 @@ def shift_the_string(s):
         ret += letter
     return ret
 
-url = 'http://www.pythonchallenge.com/pc/def/map.html'
-content = requests.get(url).content
-input = input_text_pattern.findall(content)[0]
-print(input)
-print(shift_the_string(input))
-print(shift_the_string('map'))
+
+if __name__ == '__main__':
+    url = 'http://www.pythonchallenge.com/pc/def/map.html'
+    content = requests.get(url).content
+    input = INPUT_TEXT_PATTERN.findall(content)[0]
+    print(input)
+    print(shift_the_string(input))
+    print(shift_the_string('map'))
