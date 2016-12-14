@@ -5,12 +5,12 @@ import requests
 
 from StringIO import StringIO
 
+URL = 'http://www.pythonchallenge.com/pc/def/channel.zip'
 NEXT_PATTERN = re.compile(r'Next nothing is ([0-9]{1,5})')
 
 
 if __name__ == '__main__':
-    url = 'http://www.pythonchallenge.com/pc/def/channel.zip'
-    content = requests.get(url).content
+    content = requests.get(URL).content
     file_obj = StringIO(content)
     zip_file = zipfile.ZipFile(file_obj)
 

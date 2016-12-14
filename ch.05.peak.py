@@ -2,10 +2,11 @@
 import pickle
 import requests
 
+URL = 'http://www.pythonchallenge.com/pc/def/banner.p'
+
 
 if __name__ == '__main__':
-    url = 'http://www.pythonchallenge.com/pc/def/banner.p'
-    content = requests.get(url).content
+    content = requests.get(URL).content
     structure = pickle.loads(content)
 
     for raw in structure:
