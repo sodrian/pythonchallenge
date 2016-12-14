@@ -1,9 +1,8 @@
 #!/usr/bin/env python
-
 URL = 'http://www.pythonchallenge.com/pc/return/bull.html'
 
 
-def _look_and_say_sequence(n):
+def _look_and_say_sequence(n, debug=False):
     seq_el = 1
 
     for i in xrange(1, n):
@@ -23,7 +22,8 @@ def _look_and_say_sequence(n):
                 prev_lst_el[1] += 1
                 l.append(prev_lst_el)
 
-        # print('{0} -> {1}\n\n'.format(seq_el, l))
+        if debug:
+            print('{0} -> {1}\n\n'.format(seq_el, l))
 
         r = ''
         for el in l:
