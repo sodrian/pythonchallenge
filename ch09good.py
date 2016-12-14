@@ -3,6 +3,7 @@ import re
 import requests
 from PIL import Image, ImageDraw
 from requests.auth import HTTPBasicAuth
+from .http_auth import HTTP_USERNAME, HTTP_PASSWORD
 
 
 URL = 'http://www.pythonchallenge.com/pc/return/good.html'
@@ -18,7 +19,7 @@ def _raw_to_lst(raw):
 
 
 if __name__ == '__main__':
-    body = requests.get(URL, auth=HTTPBasicAuth('huge', 'file')).content
+    body = requests.get(URL, auth=HTTPBasicAuth(HTTP_USERNAME, HTTP_PASSWORD)).content
     first = _raw_to_lst(re.findall(FIRST_INPUT_PATTERN, body, re.DOTALL)[0])
     second = _raw_to_lst(re.findall(SECOND_INPUT_PATTERN, body, re.DOTALL)[0])
 

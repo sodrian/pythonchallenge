@@ -1,0 +1,2 @@
+HTTP_USERNAME = 'huge'
+HTTP_PASSWORD = 'file'
