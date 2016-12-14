@@ -3,7 +3,7 @@ import re
 import requests
 from PIL import Image, ImageDraw
 from requests.auth import HTTPBasicAuth
-from .http_auth import HTTP_USERNAME, HTTP_PASSWORD
+from http_auth import HTTP_USERNAME, HTTP_PASSWORD
 
 
 URL = 'http://www.pythonchallenge.com/pc/return/good.html'
