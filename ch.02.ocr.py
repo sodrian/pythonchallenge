@@ -3,14 +3,14 @@ import re
 import requests
 from collections import OrderedDict
 
+URL = 'http://www.pythonchallenge.com/pc/def/ocr.html'
 INPUT_PATTERN = re.compile(
     r'<!--.*find rare characters in the mess below:.*-->.*<!--(.*)-->',
     re.DOTALL)
 
 
 if __name__ == '__main__':
-    url = 'http://www.pythonchallenge.com/pc/def/ocr.html'
-    content = requests.get(url).content
+    content = requests.get(URL).content
     input = INPUT_PATTERN.findall(content)[0]
 
     d = OrderedDict()

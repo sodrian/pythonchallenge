@@ -2,6 +2,7 @@
 import re
 import requests
 
+URL = 'http://www.pythonchallenge.com/pc/def/map.html'
 INPUT_TEXT_PATTERN = re.compile(r'''<font color="#f000f0">(.*)</tr></td>''', re.DOTALL)
 
 
@@ -16,9 +17,7 @@ def shift_the_string(s):
 
 
 if __name__ == '__main__':
-    url = 'http://www.pythonchallenge.com/pc/def/map.html'
-    content = requests.get(url).content
+    content = requests.get(URL).content
     input = INPUT_TEXT_PATTERN.findall(content)[0]
-    print(input)
     print(shift_the_string(input))
     print(shift_the_string('map'))

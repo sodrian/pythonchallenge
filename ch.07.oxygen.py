@@ -4,9 +4,11 @@ import requests
 import StringIO
 from PIL import Image
 
+URL = 'http://www.pythonchallenge.com/pc/def/oxygen.png'
+
 
 if __name__ == '__main__':
-    content = requests.get('http://www.pythonchallenge.com/pc/def/oxygen.png').content
+    content = requests.get(URL).content
     file_obj = StringIO.StringIO(content)
     file_obj.seek(0)
 
